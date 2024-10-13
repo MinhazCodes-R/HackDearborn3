@@ -150,3 +150,24 @@ body{
     position: relative;
     z-index: 2;
 }
+
+
+
+@keyframes pushleft {
+
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(3000px);
+    }
+    
+}
+
+
+
+.hiddenleft{
+    animation: pushleft;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+}
