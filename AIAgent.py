@@ -1,4 +1,3 @@
-# ai agent
 """
 This agent is capable of receiving messages and reply to the sender.
 """
@@ -30,7 +29,8 @@ def get_attr(city_name, api):
         li.append(f"{name}: {rating} stars\n{addy}\n")
     # else:
     #     return ("No results found.")
-    return str(li)
+    str2 = ''.join(li)
+    return str2
 
 
 
@@ -50,68 +50,3 @@ async def handle_message(ctx: Context, sender: str, msg: Request):
 
 if __name__ == "__main__":
     agent.run()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# from uagents import Agent, Context, Model
-# import requests
-#
-# class AttractionsRequest(Model):
-#     city_name: str
-#
-# class AttractionsResponse(Model):
-#     attractions: list
-#
-# agent = Agent(
-#     name="ai_agent",
-#     endpoint="http://localhost:8000/submit",
-#     seed="i love poopee",
-# )
-# # print(agent.address)
-#
-# GOOGLE_API_KEY = "AIzaSyBvo0dTu0VrP46PyTW8ORJuCllJxWxF3Wc"
-#
-# @agent.on_message(AttractionsRequest)
-# async def handle_request(ctx: Context, sender: str, msg: AttractionsRequest):
-#     city_name = msg.city_name
-#     attractions = get_attractions(city_name)
-#     await ctx.send(sender, AttractionsResponse(attractions=attractions))
-#     ctx.logger.info(f"Sent attractions for {city_name} to {sender[-10:]}")
-#
-# def get_attractions(city_name):
-#     url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
-#     params = {
-#         'query': f'tourist attractions in {city_name}',
-#         'key': GOOGLE_API_KEY,
-#     }
-#     response = requests.get(url, params=params)
-#     data = response.json()
-#     results = data.get('results', [])
-#     attractions = [place['name'] for place in results]
-#     return attractions
-#
-# if __name__ == "__main__":
-#     # Print the AI agent's address
-#     print(f"AI Agent Address: {agent.address}")
-#     agent.run()
-#
