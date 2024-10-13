@@ -5,7 +5,7 @@ let slideContainer = document.querySelector('.slide')
 let intervalId = null
 let currentIndex = 0
 
-let time = 1500;
+let time = 4500;
 
 
 document.querySelector("#searchbutton").addEventListener('click', ()=>{
