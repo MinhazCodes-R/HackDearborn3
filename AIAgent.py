@@ -1,3 +1,4 @@
+#This is the agent that takes in the input for what area to search for, and returns all of the tourist attractions
 # Imports
 from uagents import Model, Agent, Context
 import requests
