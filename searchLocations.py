@@ -1,4 +1,3 @@
-#This is the agent that takes in the input for what area to search for, and returns all of the tourist attractions
 # Imports
 from uagents import Model, Agent, Context
 import requests
@@ -42,12 +41,12 @@ def get_attr(userLocationName, api):
 @agent.on_message(model=Request)
 async def handle_message(ctx: Context, sender: str, msg: Request):
     "Log the received message"
-    city = msg.message
-    api_key = 'AIzaSyBvo0dTu0VrP46PyTW8ORJuCllJxWxF3Wc'
+    userLocation = msg.message
+    api = 'AIzaSyBvo0dTu0VrP46PyTW8ORJuCllJxWxF3Wc'
     ctx.logger.info(f"Received message from {sender}: {msg.message}")
-    ctx.logger.info(city)
-    ctx.logger.info(get_attr(city, api_key))
-    await ctx.send(sender, Request(message= get_attr(city, api_key)))
+    ctx.logger.info(userLocation)
+    ctx.logger.info(get_attr(userLocation, api))
+    await ctx.send(sender, Request(message= get_attr(userLocation, api)))
     # ctx.logger.info(f"Message has been sent to User sendToLocator")
 
 
@@ -55,3 +54,5 @@ async def handle_message(ctx: Context, sender: str, msg: Request):
     
 if __name__ == "__main__":
     agent.run()
+    
+    
