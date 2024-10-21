@@ -2,7 +2,7 @@ import requests
 from uagents import Agent, Context, Model
 
 # ChatGPT API key
-API_KEY = "sk-UT_bubFHgd9RW9dAZ3Xk7fvksBKyYT0M0lJvUacUkFT3BlbkFJTB-unpyBMF6Rv5kti9ydHTsUbqbgIcJK9bBAcNkOoA"
+API_KEY = "API_KEY"
 
 
 class ChatGPTPrompt(Model):
