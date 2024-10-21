@@ -3,7 +3,7 @@ import requests
 from uagents import Agent, Context, Model
 
 # Load the API key from environment variable
-GOOGLE_API_KEY = "AIzaSyBvo0dTu0VrP46PyTW8ORJuCllJxWxF3Wc"
+GOOGLE_API_KEY = "API_KEY"
 
 
 class GeolocationRequest(Model):
